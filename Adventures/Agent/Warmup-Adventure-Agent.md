@@ -301,6 +301,6 @@ Agent Mode가 기대대로 동작하지 않을 때:
 3. **통합 실험**: 다양한 프레임워크와 도구를 Agent Mode와 결합해 보세요.
 4. **경험 공유**: Agent Mode 기능 향상을 위해 피드백을 제공하세요.
 
-[Adventures/Agent](../Adventures/Agent) 폴더의 다른 어드벤처를 확인해, GitHub Copilot Agent Mode가 개발 워크플로우를 어떻게 향상시키는지 더 알아보세요!
+[Adventures/Agent](../Agent) 폴더의 다른 어드벤처를 확인해, GitHub Copilot Agent Mode가 개발 워크플로우를 어떻게 향상시키는지 더 알아보세요!
 
 **기억하세요**: Agent Mode는 **자율적인 개발 파트너**입니다. 명확한 목표를 제시하고, 작업을 맡긴 뒤, 함께 반복적으로 개선하며 놀라운 소프트웨어를 만들어 보세요!
