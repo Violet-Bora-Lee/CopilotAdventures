@@ -1,113 +1,115 @@
-## The Clockwork Town of Tempora - Agent Mode Adventure
+## 템포라의 시계 마을 - Agent Mode 어드벤처
 
 <a href="#">
     <img src="../../../Images/tempora-clocks.jpg"  style="width: 830px" />
 </a>
 
-### Background
+### 배경(Background)
 
-In the mechanical town of Tempora, everything operates on clockwork and precise timing. At the heart of the town is the Grand Clock Tower, responsible for keeping time for all the town's activities. However, over the years, some smaller clocks in the town have started to drift away from the accurate time.
+기계 장치로 움직이는 마을 템포라에서는 모든 것이 시계 장치와 정밀한 타이밍으로 운영됩니다.  
+마을의 중심에는 모든 활동의 시간을 맞추는 **대형 시계탑(Grand Clock Tower)**이 있습니다. 그러나 시간이 흐르면서, 마을의 작은 시계들은 점점 정확한 시간에서 벗어나기 시작했습니다.
 
-### Objective
+### 목표(Objective)
 
-Your task is to create a system that checks all the clocks in the town and synchronizes them with the Grand Clock Tower. You'll be given a list of times from various clocks around the town, and you must determine how many minutes each clock is ahead or behind the Grand Clock Tower's time.
+당신의 임무는 마을의 모든 시계를 확인하고, 그것들을 **대형 시계탑 시간과 동기화하는 시스템**을 만드는 것입니다.  
+마을의 여러 시계에서 제공되는 시간을 입력받아, 각 시계가 대형 시계탑의 시간보다 얼마나 앞서거나 뒤쳐져 있는지 분 단위로 계산해야 합니다.
 
-**In this adventure, you'll learn to use GitHub Copilot Agent Mode** - an autonomous AI assistant that can understand complex tasks and break them down into multiple steps, creating entire applications from scratch!
+**이 어드벤처에서는 GitHub Copilot Agent Mode를 활용하는 법을 배우게 됩니다** — 복잡한 작업을 이해하고 여러 단계로 분해하여, 처음부터 완전한 애플리케이션을 만들어낼 수 있는 자율형 AI 어시스턴트입니다!
 
-### Prerequisites
+### 사전 준비(Prerequisites)
 
-Before starting this adventure, you'll need to perform the following steps:
+이 어드벤처를 시작하기 전에 다음 단계를 완료해야 합니다:
 
-1. **Install VS Code** - Download from [VS Code](https://code.visualstudio.com/).
-2. **Set up GitHub Copilot in VS Code** - Follow the instructions at [Set up GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/setup).
+1. **VS Code 설치** — [VS Code](https://code.visualstudio.com/)에서 다운로드.
+2. **VS Code에서 GitHub Copilot 설정** — [설정 가이드](https://code.visualstudio.com/docs/copilot/setup) 참고.
 
-### Learning Outcomes
+### 학습 성과(Learning Outcomes)
 
-By completing this adventure with Agent Mode, you'll learn:
+이 어드벤처를 Agent Mode로 완료하면 다음을 배우게 됩니다:
 
-- ✅ How to give high-level instructions to an AI agent
-- ✅ How Agent Mode breaks down complex tasks autonomously
-- ✅ How to iterate and refine solutions with an AI pair programmer
-- ✅ The power of autonomous coding assistance for complete projects
-- ✅ Best practices for prompting Agent Mode effectively
+- ✅ AI 에이전트에게 고수준 지시를 내리는 방법  
+- ✅ Agent Mode가 복잡한 작업을 자율적으로 분해하는 방식  
+- ✅ AI 페어 프로그래머와 함께 반복적으로 솔루션을 개선하는 방법  
+- ✅ 전체 프로젝트 수준의 자율형 코딩 보조 경험  
+- ✅ Agent Mode를 효과적으로 프롬프트하는 모범 사례  
 
-### Setting Up Agent Mode
+### Agent Mode 설정하기
 
-1. **Open VS Code** and ensure you're signed in to GitHub.
-3. **Open the Chat view** by selecting the chat icon in the top bar.
-4. **Select "Agent" mode** from the dropdown at the bottom of the Chat panel.
+1. **VS Code 열기** 및 GitHub 계정 로그인 확인  
+2. **Chat 뷰 열기** — 상단 바의 채팅 아이콘 선택  
+3. **Chat 패널 하단 드롭다운에서 "Agent" 모드 선택**  
 
-### Specifications
+### 요구 사항(Specifications)
 
-Now let's define the requirements for the clock synchronization system so that you can start using Agent Mode effectively!
+이제 Agent Mode를 효과적으로 사용하기 위해 시계 동기화 시스템의 요구 사항을 정의해 봅시다!
 
-1. **Clock Data:**
-    - The clock times are provided in a 24-hour format.
-    - The Grand Clock Tower is at 15:00.
-    - Clock times around town:
-        - Clock 1: 14:45
-        - Clock 2: 15:05
-        - Clock 3: 15:00
-        - Clock 4: 14:40
+1. **시계 데이터:**
+    - 모든 시계는 24시간 형식으로 제공된다.
+    - 대형 시계탑의 시간은 **15:00**.
+    - 마을의 시계들:
+        - 시계 1: 14:45
+        - 시계 2: 15:05
+        - 시계 3: 15:00
+        - 시계 4: 14:40
 
-2. **Time Analysis and Output:**
-    - You need to determine how many minutes each clock is ahead or behind the Grand Clock Tower.
-    - The result should be an array of integers representing the time difference in minutes. Positive values indicate the clock is ahead, and negative values indicate it's behind.
+2. **시간 분석 및 출력:**
+    - 각 시계가 대형 시계탑보다 몇 분 앞섰는지 또는 뒤쳐졌는지 계산한다.
+    - 결과는 분 단위의 정수 배열로 제공한다. 양수는 시계가 빠른 것이고, 음수는 느린 것임을 나타낸다.
 
-### Using Agent Mode to Solve the Adventure
+### Agent Mode로 어드벤처 해결하기
 
-#### Step 1: Give Agent Mode a High-Level Task
+#### 1단계: Agent Mode에 고수준 작업 지시하기
 
-In the Chat panel with "Agent" mode selected, provide a comprehensive prompt like:
-
-```
-Create a complete clock synchronization system for the town of Tempora. The system should:
-
-1. Create a console application in JavaScript (or your preferred language)
-2. Define the Grand Clock Tower time as 15:00
-3. Store clock times for 4 clocks around town: 14:45, 15:05, 15:00, 14:40
-4. Calculate how many minutes each clock is ahead or behind the Grand Clock Tower
-5. Display the results clearly, showing positive values for clocks ahead and negative for clocks behind
-6. Include proper error handling and clear documentation
-7. Make the code readable and maintainable
-
-Please create the project structure, write the code, and test it.
-```
-
-#### Step 2: Watch Agent Mode Work
-
-Agent Mode will autonomously:
-- 🔍 **Analyze** your workspace and determine what files to create
-- 📁 **Create** the necessary project structure
-- 💻 **Write** the complete application code
-- 🧪 **Test** the application by running it
-- 🔧 **Fix** any issues that arise automatically
-
-You'll see each step in the UI, showing every tool invocation.
-
-#### Step 3: Interact and Refine
-
-As Agent Mode works, you can:
-- **Approve or modify** proposed changes
-- **Ask for improvements**: "Can you add visual clock representations?"
-- **Request explanations**: "Explain how the time calculation works"
-- **Add features**: "Add the ability to input custom clock times"
-
-#### Step 4: Explore Advanced Features
-
-Once your basic system works, try asking Agent Mode to:
+Chat 패널에서 "Agent" 모드를 선택하고 아래와 같은 프롬프트를 제공합니다:
 
 ```
-Enhance the clock system with these features:
-1. Add a visual ASCII representation of each clock
-2. Create unit tests for the time calculation logic
-3. Add error handling for invalid time formats
-4. Generate documentation explaining the system
+템포라 마을을 위한 완전한 시계 동기화 시스템을 만들어 주세요. 시스템은 다음을 포함해야 합니다:
+
+1. JavaScript(또는 원하는 언어)로 콘솔 애플리케이션을 생성한다.  
+2. 대형 시계탑(Grand Clock Tower)의 시간을 **15:00**으로 정의한다.  
+3. 마을에 있는 4개의 시계 시간을 저장한다: 14:45, 15:05, 15:00, 14:40  
+4. 각 시계가 대형 시계탑보다 몇 분 앞섰는지 또는 뒤처졌는지 계산한다.  
+5. 결과를 명확하게 표시하며, 앞선 시계는 양수 값으로, 뒤처진 시계는 음수 값으로 보여준다.  
+6. 적절한 오류 처리와 명확한 문서를 포함한다.  
+7. 코드를 읽기 쉽고 유지보수 가능하게 작성한다.  
+
+프로젝트 구조를 생성하고, 코드를 작성하고, 테스트까지 진행해 주세요.
 ```
 
-### Expected Output Example
+#### 2단계: Agent Mode 작업 지켜보기
 
-When your Agent Mode implementation is complete, running the application should produce output similar to the following. AI is non-deterministic, so your results may vary slightly, but the structure should be similar.
+Agent Mode는 자율적으로:
+
+- 🔍 **요구사항 분석** 및 생성할 파일 결정  
+- 📁 **필요한 프로젝트 구조 생성**  
+- 💻 **완전한 애플리케이션 코드 작성**  
+- 🧪 **애플리케이션 실행 및 테스트**  
+- 🔧 **문제 발생 시 자동 수정**  
+
+#### 3단계: 상호작용 및 개선
+
+Agent Mode가 작업하는 동안, 당신은:
+
+- **변경 승인 또는 수정 요청**  
+- **개선 요구**: "시계를 시각적으로 표현해 줄 수 있어?"  
+- **설명 요청**: "시간 계산이 어떻게 작동하는지 설명해줘"  
+- **기능 추가**: "사용자가 직접 시계 시간을 입력할 수 있게 해줘"  
+
+#### 4단계: 고급 기능 탐험
+
+기본 시스템이 동작하면, Agent Mode에 다음과 같은 기능을 요청해 보세요:
+
+```
+다음 기능들로 시계 시스템을 향상해 주세요:
+1. 각 시계를 시각적으로 표현하는 ASCII 아트 추가
+2. 시간 계산 로직에 대한 유닛 테스트 작성
+3. 잘못된 시간 형식에 대한 오류 처리 추가
+4. 시스템을 설명하는 문서 생성
+```
+
+### 예상 출력 예시(Expected Output Example)
+
+Agent Mode 구현이 완료되면, 애플리케이션 실행 시 다음과 유사한 결과가 나옵니다 (AI는 비결정적이므로 약간 다를 수 있음):
 
 ```
 🕐 Tempora Clock Synchronization System 🕐
@@ -140,88 +142,113 @@ Summary: 3 clocks need adjustment
 ⏰ 15 min BEHIND
 ```
 
-**Verification Checklist:**
-- ✅ Correctly calculates time differences: [-15, +5, 0, -20]
-- ✅ Identifies 3 clocks needing adjustment
-- ✅ Includes ASCII clock visualizations
-- ✅ Shows clockwork/steampunk themed output
-- ✅ Handles time format validation
-- ✅ Provides clear status for each clock
+또는
 
-### Agent Mode Tips
+```
+🕐 템포라 시계 동기화 시스템 🕐
+대형 시계탑 시간: 15:00
+
+시계 분석 결과:
+시계 1 (14:45): -15분 (느림)
+시계 2 (15:05): +5분 (빠름)
+시계 3 (15:00): 0분 (동기화됨)
+시계 4 (14:40): -20분 (느림)
+
+요약: 조정이 필요한 시계 3개
+
+🏛️ 향상된 템포라 시계 분석 🏛️
+
+🗼 대형 시계탑:
+    ⏰ 15:00
+     12
+   9  |  3
+     6
+  (3:0
+
+```
+
+
+**검증 체크리스트(Verification Checklist):**
+- ✅ 시간 차이를 올바르게 계산: [-15, +5, 0, -20]  
+- ✅ 조정이 필요한 시계 3개 식별  
+- ✅ ASCII 시계 시각화 포함  
+- ✅ 시계/스팀펑크 테마 출력  
+- ✅ 시간 형식 검증 처리  
+- ✅ 각 시계 상태를 명확하게 표시  
+
+### Agent Mode 팁
 
 <a href="#">
     <img src="../../../Images/agent-mode-tips.jpg"  style="width: 830px" />
 </a>
 
-#### Effective Prompting Strategies
+#### 효과적인 프롬프트 전략
 
-1. **Be Comprehensive**: Give Agent Mode the full context and all requirements upfront
-2. **Specify Preferences**: Mention your preferred programming language, frameworks, or patterns
-3. **Set Clear Goals**: Define what "done" looks like for your project
-4. **Ask for Best Practices**: Request clean, maintainable, and well-documented code
+1. **맥락 제공**: Agent Mode에 전체 컨텍스트와 요구사항을 upfront 제공  
+2. **선호사항 명시**: 선호하는 언어, 프레임워크, 패턴 등을 언급  
+3. **목표 명확화**: 프로젝트의 "완료(done)" 정의  
+4. **모범 사례 요청**: 유지보수성과 문서화가 잘 된 코드를 요청  
 
-#### Leverage Agent Mode's Autonomy
+#### Agent Mode의 자율성 활용
 
-1. **Let it work**: Allow Agent Mode to complete multi-step tasks without interruption
-2. **Review and approve**: Check the proposed changes before they're applied
-3. **Iterate naturally**: Ask for improvements or modifications as needed
-4. **Learn from the process**: Observe how Agent Mode structures and solves problems
+1. **작업 맡기기**: 방해하지 말고 다단계 작업을 완료하게 두기  
+2. **검토 및 승인**: 적용 전에 제안된 변경사항을 확인  
+3. **자연스럽게 반복**: 필요 시 개선 요청 또는 수정  
+4. **학습 기회 활용**: Agent Mode가 문제를 구조화하고 해결하는 방식을 관찰  
 
+### 중요한 고려사항
 
-### Important Agent Mode Considerations
+**도구 확인 및 제한:**
+- Agent Mode는 도구 호출/명령 실행 전에 사용자 승인을 요구합니다.  
+- 요청당 최대 128개의 도구 사용 가능  
+- 언제든 요청을 중단/일시정지 가능  
+- 변경 사항은 적용 전 반드시 검토  
 
-**Tool Confirmation & Limits:**
-- Agent Mode requires your confirmation before invoking tools or running commands
-- Maximum of 128 tools can be used per request
-- You can interrupt or pause requests at any time
-- Always review suggested edits before accepting
+### Agent Mode 문제 해결(Troubleshooting)
 
-### Troubleshooting Agent Mode
+Agent Mode가 기대대로 작동하지 않을 경우:
 
-If Agent Mode isn't working as expected:
+**일반적인 문제 & 해결책:**
 
-**Common Issues & Solutions:**
+🔧 **파일이 생성되지 않음**
+- 워크스페이스 권한 확인  
+- 유효한 프로젝트 디렉토리인지 확인  
+- 프롬프트 시 파일 생성 승인  
 
-🔧 **Agent not creating files**
-- Check your workspace permissions
-- Ensure you're in a valid project directory
-- Approve file creation when prompted
+🔧 **불완전한 구현**
+- 프롬프트에 더 많은 세부 사항 필요  
+- 성공 기준과 요구사항을 더 명확히 추가  
+- 기대 동작 예시 포함  
 
-🔧 **Incomplete implementation**
-- Your prompt may need more detail - be more comprehensive
-- Add specific success criteria and requirements
-- Include examples of expected behavior
+🔧 **도구 승인 필요**
+- 도구 사용 승인 필요  
+- 파일 작업 시 "Allow" 클릭  
+- 어떤 도구가 사용되는지 확인  
 
-🔧 **Tool confirmation needed**
-- Agent Mode requires your approval for tool usage
-- Click "Allow" when prompted for file operations
-- Review what tools will be used before approving
+🔧 **작업 중단**
+- 요청당 128개 도구 제한에 도달했을 수 있음  
+- 복잡한 작업을 더 작은 단위로 나눔  
+- 후속 프롬프트로 이어감  
 
-🔧 **Agent stops mid-task**
-- May have hit the 128 tool limit per request
-- Break complex tasks into smaller chunks
-- Continue with a follow-up prompt
+**설정 확인:**
+1. **VS Code 버전 확인** — 최신 버전 사용 여부  
+2. **설정 검증** — `chat.agent.enabled` 옵션 확인  
+3. **모드 선택** — Chat 드롭다운에서 "Agent" 모드 선택  
+4. **GitHub 로그인** — Copilot 액세스 확인  
+5. **도구 권한** — 승인 요청 시 확인  
 
-**Setup Verification:**
-1. **Check VS Code version**: Ensure you're using a recent version of VS Code
-2. **Verify settings**: Confirm `chat.agent.enabled` is checked
-3. **Check mode selection**: Make sure "Agent" is selected in the Chat dropdown
-4. **Sign in**: Ensure you're signed in to GitHub with Copilot access
-5. **Tool Permissions**: Approve tool usage when prompted
+**프로 팁(Pro Tips):**
+- 작은 작업부터 시작해 Agent Mode에 익숙해지기  
+- "완료" 정의를 구체적으로 명시  
+- 프롬프트에 테스트 및 검증 요구 포함  
 
-**Pro Tips:**
-- Start with smaller tasks to get familiar with Agent Mode
-- Be very specific about what "done" looks like
-- Include testing and validation requirements in your prompts
+### 다음 단계(What's Next?)
 
-### What's Next?
+이 어드벤처 후에:  
 
-After trying out Agent Mode with this adventure:
+1. **중급 어드벤처 시도** — 더 복잡한 시나리오 도전  
+2. **사용자 정의 도구/확장 실험** — Agent Mode와 통합  
+3. **실제 프로젝트 적용** — 완전한 애플리케이션 제작에 최적  
+4. **경험 공유 및 피드백 제공** — Agent Mode 기능 개선에 기여  
 
-1. Try the **Intermediate adventures** using Agent Mode for more complex scenarios
-2. Experiment with **custom tools and extensions** that integrate with Agent Mode
-3. Use Agent Mode for **real projects** - it excels at creating complete applications
-4. Share your experience and **provide feedback** to help improve Agent Mode
-
-Remember: Agent Mode is your autonomous coding partner. Give it clear goals, let it work, and iterate together to build amazing software!
+**기억하세요**: Agent Mode는 **자율적인 코딩 파트너**입니다. 명확한 목표를 주고, 실행을 맡기며, 반복적으로 개선해 놀라운 소프트웨어를 함께 만들어가세요!
