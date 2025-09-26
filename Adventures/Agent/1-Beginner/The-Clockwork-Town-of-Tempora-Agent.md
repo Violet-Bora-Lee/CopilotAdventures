@@ -75,6 +75,21 @@ Chat 패널에서 "Agent" 모드를 선택하고 아래와 같은 프롬프트�
 
 프로젝트 구조를 생성하고, 코드를 작성하고, 테스트까지 진행해 주세요.
 ```
+(또는)
+
+```
+Create a complete clock synchronization system for the town of Tempora. The system should:
+
+1. Create a console application in JavaScript (or your preferred language)
+2. Define the Grand Clock Tower time as 15:00
+3. Store clock times for 4 clocks around town: 14:45, 15:05, 15:00, 14:40
+4. Calculate how many minutes each clock is ahead or behind the Grand Clock Tower
+5. Display the results clearly, showing positive values for clocks ahead and negative for clocks behind
+6. Include proper error handling and clear documentation
+7. Make the code readable and maintainable
+
+Please create the project structure, write the code, and test it.
+```
 
 #### 2단계: Agent Mode 작업 지켜보기
 
@@ -105,6 +120,16 @@ Agent Mode가 작업하는 동안, 당신은:
 2. 시간 계산 로직에 대한 유닛 테스트 작성
 3. 잘못된 시간 형식에 대한 오류 처리 추가
 4. 시스템을 설명하는 문서 생성
+```
+
+(또는)
+
+```
+Enhance the clock system with these features:
+1. Add a visual ASCII representation of each clock
+2. Create unit tests for the time calculation logic
+3. Add error handling for invalid time formats
+4. Generate documentation explaining the system
 ```
 
 ### 예상 출력 예시(Expected Output Example)
