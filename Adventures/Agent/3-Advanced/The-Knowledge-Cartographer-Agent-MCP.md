@@ -248,7 +248,7 @@ Please implement this complete system with sample knowledge domains and demonstr
 #### 4단계: 고급 기능 탐험  
 
 ```
-Enhance the Knowledge Cartographer with these advanced MCP integrations:
+Knowledge Cartographer를 다음의 고급 MCP 통합으로 향상시키십시오.
 1. 다중 소스 지식 그래프 병합
 2. 자동 지식 업데이트 워크플로우
 3. 멀티미디어 콘텐츠 지원
@@ -256,6 +256,17 @@ Enhance the Knowledge Cartographer with these advanced MCP integrations:
 5. 고급 그래프 분석 및 통찰
 6. 추천 시스템
 7. 외부 지식 베이스/API 통합
+```
+
+```
+Enhance the Knowledge Cartographer with these advanced MCP integrations:
+1. Implement knowledge graph merge capabilities for multiple sources
+2. Create automated knowledge update workflows
+3. Add support for multimedia content discovery and organization
+4. Build knowledge sharing and export pipelines
+5. Implement advanced graph analytics and insights
+6. Create knowledge recommendation systems
+7. Add integration with external knowledge bases and APIs
 ```
 
 ### 예상 출력(Expected Output)
