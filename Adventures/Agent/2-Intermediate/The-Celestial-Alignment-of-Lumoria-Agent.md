@@ -71,27 +71,6 @@
 Chat 패널에서 "Agent" 모드를 선택하고 아래와 같은 프롬프트를 제공합니다:
 
 ```
-Create a complete celestial light intensity calculation system for the Lumoria star system. The system should:
-
-1. Create a console application in JavaScript (or your preferred language)
-2. Define the planetary data with distances and sizes:
-   - Mercuria: 0.4 AU, 4879 km
-   - Earthia: 1 AU, 12742 km  
-   - Marsia: 1.5 AU, 6779 km
-   - Venusia: 0.7 AU, 12104 km
-3. Implement light intensity calculation logic:
-   - Sort planets by distance from sun
-   - For each planet, count how many larger/smaller planets are closer to sun
-   - Apply shadow rules: Full, Partial, None, or None (Multiple Shadows)
-4. Display results clearly showing each planet's light intensity
-5. Include beautiful console output with celestial theme
-6. Add proper error handling and documentation
-7. Make the code readable and maintainable
-
-Please create the project structure, write the code, and test it.
-```
-
-```
 루모리아 항성계를 위한 완전한 천체 빛 강도 계산 시스템을 만들어 주세요. 시스템은 다음을 포함해야 합니다:
 
 1. JavaScript(또는 선호하는 언어)로 콘솔 애플리케이션을 생성한다.
@@ -110,6 +89,27 @@ Please create the project structure, write the code, and test it.
 7. 코드를 읽기 쉽고 유지보수 가능하게 작성한다.
 
 프로젝트 구조를 생성하고, 코드를 작성하며, 테스트까지 수행해 주세요.
+```
+
+```
+Create a complete celestial light intensity calculation system for the Lumoria star system. The system should:
+
+1. Create a console application in JavaScript (or your preferred language)
+2. Define the planetary data with distances and sizes:
+   - Mercuria: 0.4 AU, 4879 km
+   - Earthia: 1 AU, 12742 km  
+   - Marsia: 1.5 AU, 6779 km
+   - Venusia: 0.7 AU, 12104 km
+3. Implement light intensity calculation logic:
+   - Sort planets by distance from sun
+   - For each planet, count how many larger/smaller planets are closer to sun
+   - Apply shadow rules: Full, Partial, None, or None (Multiple Shadows)
+4. Display results clearly showing each planet's light intensity
+5. Include beautiful console output with celestial theme
+6. Add proper error handling and documentation
+7. Make the code readable and maintainable
+
+Please create the project structure, write the code, and test it.
 ```
 
 #### 2단계: Agent Mode 작업 지켜보기
@@ -136,6 +136,16 @@ Agent Mode가 작업하는 동안, 당신은:
 기본 시스템이 동작하면, Agent Mode에 다음과 같은 기능을 요청해 보세요:
 
 ```
+다음 기능들로 천체 정렬 시스템을 향상해 주세요:
+1. 행성 정렬을 시각적으로 표현하는 SVG를 생성
+2. 정렬 과정에서 그림자가 어떻게 변하는지 보여주는 애니메이션 추가
+3. 그림자 계산의 과학적 정확도를 높이기 위한 개선 사항 반영
+4. 이 천체 현상에 대한 상세 보고서 생성
+5. 빛 강도 계산 로직에 대한 유닛 테스트 작성
+6. 사용자 정의 행성을 가진 다양한 항성계를 지원하도록 확장
+```
+
+```
 Enhance the celestial alignment system with these features:
 1. Create a visual SVG representation of the planetary alignment
 2. Add animation showing how shadows change during alignment
@@ -145,15 +155,6 @@ Enhance the celestial alignment system with these features:
 6. Add support for different star systems with custom planets
 ```
 
-```
-다음 기능들로 천체 정렬 시스템을 향상해 주세요:
-1. 행성 정렬을 시각적으로 표현하는 SVG를 생성
-2. 정렬 과정에서 그림자가 어떻게 변하는지 보여주는 애니메이션 추가
-3. 그림자 계산의 과학적 정확도를 높이기 위한 개선 사항 반영
-4. 이 천체 현상에 대한 상세 보고서 생성
-5. 빛 강도 계산 로직에 대한 유닛 테스트 작성
-6. 사용자 정의 행성을 가진 다양한 항성계를 지원하도록 확장
-```
 
 ### 예상 출력 예시(Expected Output Example)
 
@@ -189,6 +190,38 @@ None (Multiple Shadows): 1개 행성
 🌑 가장 큰 영향을 받은 행성: 마르시아 (None - Multiple Shadows)
 
 ✨ 천체 정렬 분석이 완료되었습니다! ✨
+```
+
+```
+🌌 Celestial Alignment of Lumoria - Light Intensity Analysis 🌌
+
+🔬 Analyzing planetary positions and shadow effects...
+
+🌟 Solar System Alignment:
+
+🌟 Lumorian Sun
+────🪐 Mercuria ☀️
+───────🪐 Venusia 🌤️
+──────────🪐 Earthia 🌤️
+───────────────🪐 Marsia 🌑
+
+📊 Detailed Light Intensity Results:
+
+Planet      | Distance (AU) | Size (km) | Light Intensity | Explanation
+──────────────────────────────────────────────────────────────────────────────────────────
+Mercuria    | 0.4           | 4879      | Full            | Closest to sun - no shadows possible
+Venusia     | 0.7           | 12104     | Partial         | Smaller planets create partial shadow
+Earthia     | 1             | 12742     | Partial         | Smaller planets create partial shadow
+Marsia      | 1.5           | 6779      | None (Multiple Shadows) | Multiple larger planets (2) create complete shadow
+
+📈 Alignment Summary:
+Full: 1 planet(s)
+Partial: 2 planet(s)
+None (Multiple Shadows): 1 planet(s)
+
+🌑 Most affected planet: Marsia (None (Multiple Shadows))
+
+✨ The celestial alignment analysis is complete! ✨
 ```
 
 **검증 체크리스트(Verification Checklist):**
